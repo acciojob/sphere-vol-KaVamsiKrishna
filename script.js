@@ -7,7 +7,10 @@ function volume_sphere(e) {
 		volumeEle.value = 'NaN'
 		return;
 	}
-	volumeEle.value = (4/3 * Math.PI * (radius * radius * radius)).toFixed(4);
+	const volume = 4/3 * Math.PI * (radius * radius * radius);
+	const roundedVolume = Math.round(volume * 10000)
+	volumeEle.value = roundedVolume;
+	
 } 
 
 window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
